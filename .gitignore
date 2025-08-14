@@ -1,26 +1,11 @@
-
-
-# Virtual environment
+__pycache__/
+*.pyc
+db.sqlite3
 env/
-venv/
-ENV/
-.venv/
-
-# Django stuff:
+*.env
 *.log
 *.pot
 *.pyc
 *.pyo
-*.pyd
-
-
-# Environment variables
-.env
-
-# IDE settings
-.vscode/
-.idea/
-
-
-
-
+.DS_Store
+Thumbs.db
