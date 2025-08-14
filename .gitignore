@@ -1,7 +1,4 @@
-# Python cache
-__pycache__/
-*.py[cod]
-*$py.class
+
 
 # Virtual environment
 env/
@@ -15,9 +12,7 @@ ENV/
 *.pyc
 *.pyo
 *.pyd
-db.sqlite3
-media/
-staticfiles/
+
 
 # Environment variables
 .env
@@ -26,11 +21,6 @@ staticfiles/
 .vscode/
 .idea/
 
-# OS generated files
-.DS_Store
-Thumbs.db
 
-# Backup files
-*.bak
-*.swp
-*.swo
+
+
