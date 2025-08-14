@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavani Abothula | Full-Stack Developer</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #6C63FF;
+            --secondary-color: #2D3748;
+            --light-color: #F7FAFC;
+            --dark-color: #1A202C;
+            --accent-color: #F56565;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/portifolio_background.png');
+            /* background-image: url(images/portifolio_background.png); */
+        
+             background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px; 
+            animation: gradientShift 8s ease infinite;
+        }
+        @keyframes gradientShift {
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        /* Skills Section */
+.skills {
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    padding: 80px 0;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.skill {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, var(--primary-color), #ff6f91);
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+    z-index: 0;
+    opacity: 0;
+}
+
+.skill:hover::before {
+    opacity: 0.25;
+    top: 25%;
+    /* left: 0; */
+}
+
+.skill:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.skill i {
+    font-size: 45px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    z-index: 1;
+    position: relative;
+}
+
+.skill h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    z-index: 1;
+    position: relative;
+}
+
+        
+       
+        
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .project-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .project-links a {
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .contact .section-title {
+            color: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.9);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 22px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-text {
+            margin-top: 20px;
+        }
+        
+        /* certifications */
+.certifications {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certification {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.certification:hover {
+    transform: translateY(-10px);
+}
+
+.certification img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Pavani<span>Abothula</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight" id="typing"></span></h1>
+                <p>A dedicated <span class="highlight">B.Tech CSE</span> student with a focus on <span class="highlight" >full-stack web development</span>, combining strong skills in front-end design and back-end logic using <span class="highlight">Django</span>.</p>
+                <div class="btn-container">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Pavani Abiothula"> -->
+                     <div class="eye" id="eye1">
+                        <div class="pupil"></div>
+                     </div>
+                <div class="eye" id="eye2">
+                <div class="pupil"></div>
+
+                </div>
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>I'm a passionate <span class="highlight">Computer Science Engineering</span> student with hands-on experience in front-end development, Python, and Django. I specialize in creating clean, responsive, and user-friendly websites and applications. My journey includes building projects, completing internships, and constantly exploring new technologies.</p>
+                    <p>When I'm not coding, you'll find me sharing tech content, exploring design ideas, or engaging with online learning platforms like NPTEL and Infosys Springboard. I believe in lifelong learning and always strive to stay updated with the latest trends in web development and software engineering.</p>
+                    <p>My approach blends technical knowledge with creative problem-solving, allowing me to build solutions that are not just functional but also visually engaging and impactful.</p>
+                    <p class="highlight">🎯 Let's build something great together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML/CSS</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-js-square"></i>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-server"></i>
+                    <h3>Django</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- certifications section -->
+<section class="section certifications" id="certifications">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certifications-container">
+            <div class="certification">
+                <img src="certificates/programming_fundementals.png" alt="Programming Fundamentals Certificate">
+                <h3>Programming Fundamentals using Python - Part 1</h3>
+                <p>Issued by: Great Learning</p>
+                <p>Date: July 2025</p>
+            </div>
+            <div class="certification">
+                <img src="certificates/Cognify_completion.png" alt="Front-End Development Certificate">
+                <h3>Front-End Development Internship</h3>
+                <p>Issued by: Cognifyz Technologies</p>
+                <p>Date: March 2025</p>
+            </div>
+            <div class="certification">
+                <img src="certificates/SkillCraft_completion.png" alt="Front-End Development Certificate">
+                <h3>Front-End Development Internship</h3>
+                <p>Issued by: SkillCraft</p>
+                <p>Date: June 2025</p>
+            </div>
+            <div class="certification">
+                <img src="certificates/letter_of_recommendation.png" alt="Letter of Recommendation">
+                <h3>Letter of Recommendation</h3>
+                <p>Issued by: SkillCraft</p>
+                <p>Date: June 2025</p>
+            </div>
+                <div class="certification">
+                <img src="certificates/cultivating_digital_dixterity.png" alt="cultivating digital dexterity">
+                <h3>Cultivating Digital Dexterity</h3>
+                <p>Issued by: Great Learning</p>
+                <p>Date: June 2025</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/Tic_Tie_Game.jpeg" alt="Tic-Tac-Toe Game">
+                    </div>
+                    <div class="project-info">
+                        <h3>Tic-Tac-Toe Game</h3>
+                        <p>A classic game built with JavaScript with multiplayer functionality and score tracking.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/Tic-Tac-Toe-Game/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/Tic-Tac-Toe-Game" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/rock_paper_scissor .png" alt="Rock-Paper-Scissors Game">
+                    </div>
+                    <div class="project-info">
+                        <h3>Rock-Paper-Scissors Game</h3>
+                        <p>Interactive game with computer opponent, built with JavaScript and CSS animations.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/Rock-Paper-Scissor-Game-/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/Rock-Paper-Scissor-Game-" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/stopWatch.png" alt="StopWatch Application">
+                    </div>
+                    <div class="project-info">
+                        <h3>StopWatch Web Application</h3>
+                        <p>A functional stopwatch with start, pause, and reset features using JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/SCT_WD_2/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/SCT_WD_2" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/character_counter.png" alt="Character Counter">
+                    </div>
+                    <div class="project-info">
+                        <h3>Character Count Tool</h3>
+                        <p>A utility that counts characters and words in real-time input.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/live-character-and-word-counter" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/live-character-and-word-counter" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/digital_clock.jpeg" alt="Digital Clock">
+                    </div>
+                    <div class="project-info">
+                        <h3>Digital Clock</h3>
+                        <p>A sleek digital clock with date display and theme options.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/Live-Digital-Clock/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/Live-Digital-Clock" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/img_slider.png" alt="Image Slider">
+                    </div>
+                    <div class="project-info">
+                        <h3>Image Slider</h3>
+                        <p>A responsive image carousel with smooth transitions and navigation controls.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/Image-slider/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/Image-slider" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/quiz_game.png" alt="Quiz Game">
+                    </div>
+                    <div class="project-info">
+                        <h3>Quiz Game</h3>
+                        <p>An interactive quiz application with multiple categories and score tracking.</p>
+                        <div class="project-links">
+                            <a href="https://codingWithPavani.github.io/SCT_WD_3/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/SCT_WD_3" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/calender_generator.png" alt="Calendar Generator">
+                    </div>
+                    <div class="project-info">
+                        <h3>Calendar Generator</h3>
+                        <p>A dynamic calendar that displays dates for any month/year combination.</p>
+                        <div class="project-links">
+                            <a href="https://calendar-generator-p6nm.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/calendar-generator" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/to_do list.jpeg" alt="To-Do List">
+                    </div>
+                    <div class="project-info">
+                        <h3>To-Do List Application</h3>
+                        <p>A task management app with CRUD operations, built with JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/SCT_WD_4/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href=" https://github.com/codingWithPavani/SCT_WD_4" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/eye_tracker.png" alt="Eye Tracker">
+                    </div>
+                    <div class="project-info">
+                        <h3>Eye Tracker</h3>
+                        <p>An Eye tracking the movement of cursor</p>
+                        <div class="project-links">
+                            <a href="https://eye-tracker-by-pavani.onrender.com/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/eye-tracker" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/number_guessing_game.png" alt="Number Guessing Game">
+                    </div>
+                    <div class="project-info">
+                        <h3>Number Guessing Game</h3>
+                        <p>A fun game to guess a number between 10 and 50.</p>
+                        <div class="project-links">
+                            <a href="https://number-guessing-game-glgt.onrender.com/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/number-guessing-game" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/light.png" alt="Light-On-Off">
+                    </div>
+                    <div class="project-info">
+                        <h3>Light-On-Off </h3>
+                        <p>A fun game to switch the light on and off.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/bulb-on-off/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/bulb-on-off" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/class_announcement_website.jpeg" alt="Light-On-Off">
+                    </div>
+                    <div class="project-info">
+                        <h3>Class Announcement Website</h3>
+                        <p>A fun game to switch the light on and off.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/class-announcements-website/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/class-announcements-website" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/tap-to-count.png" alt="Tap-to-Count">
+                    </div>
+                    <div class="project-info">
+                        <h3>Tap-to-Count</h3>
+                        <p>A fun game to switch the light on and off.</p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/tap-to-count/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingWithPavani/tap-to-count" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-img">
+                        <img src="images/surprise-for-abi.jpeg" alt="abi-surprise">
+                    </div>
+                    <div class="project-info">
+                        <h3>A Surprise for Abi</h3>
+                        <p>A Surprise for my Friend </p>
+                        <div class="project-links">
+                            <a href="https://codingwithpavani.github.io/abi-surprise/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/codingwithpavani/abi-surprise" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/codingWithPavani"><i class="fab fa-github"></i></a>
+                <a href="www.linkedin.com/in/pavani-abothula"><i class="fab fa-linkedin"></i></a>
+                <!-- <a href="https://twitter.com/codingwithpavani"><i class="fab fa-twitter"></i></a> -->
+                <!-- <a href="https://www.instagram.com/codingwithpavani/"><i class="fab fa-instagram"></i></a> -->
+                <a href="mailto:abothulapavani16@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2023 Pavani Abothula. All rights reserved.</p>
+            <p>Designed and built with ❤️ by Pavani</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    const text = "Pavani Abothula";
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+    }
+}
+typeWriter();
+
+</script>
