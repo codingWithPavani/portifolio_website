@@ -9,3 +9,11 @@ env/
 *.pyo
 .DS_Store
 Thumbs.db
+
+*.py[cod]
+venv/
+env/
+db.sqlite3
+media/
+staticfiles/
+.env
