@@ -7,6 +7,10 @@
     <title>Pavani Abothula | Full-Stack Developer</title>
   <!-- {% load static %} -->
     <style>
+        html {
+         scroll-behavior: smooth;
+        }
+
         /* Global Styles */
         :root {
             --primary-color: #6C63FF;
@@ -434,6 +438,59 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Experience Section */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-item {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.experience-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.experience-item .duration {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.experience-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #444;
+}
+
+.experience-item ul li {
+    margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experience-container {
+        gap: 20px;
+    }
+}
+
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -477,9 +534,10 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
                 </ul>
             </nav>
         </div>
@@ -552,6 +610,37 @@
             </div>
         </div>
     </section>
+
+    <!-- Experience Section -->
+<section class="section" id="experience">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-container">
+            <!-- Experience 1 -->
+            <div class="experience-item">
+                <h3>Frontend Development Intern</h3>
+                <h4>Cognifyz Technologies</h4>
+                <span class="duration">Feb 2025 - Mar 2025</span>
+                <ul>
+                    <li>Developed responsive web pages using HTML, CSS, and JavaScript.</li>
+                    <li>Learned to work with version control using Git and GitHub.</li>
+                </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="experience-item">
+                <h3>Frontend Development Intern</h3>
+                <h4>SkillCraft Technologies</h4>
+                <span class="duration">June 2025 - July 2025</span>
+                <ul>
+                    <li>Built mini web applications using Frontend technologies.</li>
+                    <li>Gained hands-on experience with HTML, CSS, and JavaScript.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- certifications section -->
 <section class="section certifications" id="certifications">
     <div class="container">
@@ -586,6 +675,13 @@
                 <h3>Cultivating Digital Dexterity</h3>
                 <p>Issued by: Great Learning</p>
                 <p>Date: June 2025</p>
+            </div>
+            </div>
+                <div class="certification">
+                <img src="{% static 'message/certificates/braino_vision.png' %}" alt="Braino Vision">
+                <h3>Work Shop</h3>
+                <p>Issued by: Brain O Vision</p>
+                <p>Date: Feb 2025</p>
             </div>
         </div>
     </div>
