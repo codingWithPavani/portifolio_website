@@ -85,6 +85,10 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # your app's static folder
+]
+
 # Media files settings (if you use ImageField/File uploads later)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
