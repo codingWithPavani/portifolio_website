@@ -31,11 +31,13 @@ def contact_view(request):
 
         user_subject = "Thank you for contacting us"
         user_message = (
-            f"Hi {name},\n\n"
-            "Thank you for reaching out to us. We have received your message and will get back to you soon.\n\n"
-            "Your message:\n"
-            f"{message}\n\n"
-            "Best regards,\nYour Website Team"
+                f"Hey {name} 👋,\n\n"
+                "Thanks for visiting my portfolio and reaching out!\n"
+                "Your message has safely landed in my inbox 📩 and I’ll get back to you soon.\n\n"
+                "Here’s what you sent:\n"
+                f"{message}\n\n"
+                "Until then, keep creating and stay awesome! ✨\n"
+                "- Pavani Abothula"
         )
 
         try:
