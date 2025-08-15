@@ -1,27 +1,60 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
-from django.core.mail import send_mail
 from django.http import HttpResponse
+from django.core.mail import send_mail, BadHeaderError
+from django.conf import settings
+import re
+import logging
+logger = logging.getLogger(__name__)
 
 def contact_view(request):
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
+        name = request.POST.get('name', '').strip()
+        email = request.POST.get('email', '').strip()
+        message = request.POST.get('message', '').strip()
 
-        subject = f"New Contact Form Submission from {name}"
-        full_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+        # 1️⃣ Basic validation
+        if not name or not email or not message:
+            messages.error(request, "All fields are required.")
+            return redirect('contact')
+
+        # 2️⃣ Email format validation
+        email_regex = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+        if not re.match(email_regex, email):
+            messages.error(request, "Please enter a valid email address.")
+            return redirect('contact')
+
+        # 3️⃣ Prepare email content
+        admin_subject = f"New Contact Form Submission from {name}"
+        admin_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+
+        user_subject = "Thank you for contacting us"
+        user_message = (
+            f"Hi {name},\n\n"
+            "Thank you for reaching out to us. We have received your message and will get back to you soon.\n\n"
+            "Your message:\n"
+            f"{message}\n\n"
+            "Best regards,\nYour Website Team"
+        )
 
         try:
-            send_mail(subject, full_message, email, ['abothulapavani16@gmail.com'])
+            # Send email to admin
+            send_mail(admin_subject, admin_message, settings.DEFAULT_FROM_EMAIL, ['abothulapavani16@gmail.com'])
+
+            # Send confirmation to user
+            send_mail(user_subject, user_message, settings.DEFAULT_FROM_EMAIL, [email])
+
             messages.success(request, "Your message has been sent successfully!")
+        except BadHeaderError:
+            messages.error(request, "Invalid header found.")
         except Exception as e:
-            messages.error(request, f"Failed to send message: {e}")
+            logger.error(f"Error sending contact form email: {e}")
+            messages.error(request, "An error occurred while sending your message. Please try again later.")
 
         return redirect('contact')
 
-    return render(request, 'index.html')
+    return render(request, 'message/index.html')
 
 
 def index(request):
