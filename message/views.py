@@ -59,3 +59,9 @@ def test_email(request):
         fail_silently=False,
     )
     return HttpResponse("Email sent successfully!")
+
+
+from django.shortcuts import render
+
+def test_static(request):
+    return render(request, 'message/test_static.html')

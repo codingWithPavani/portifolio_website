@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pavani Abothula | Full-Stack Developer</title>
+  <!-- {% load static %} -->
     <style>
         /* Global Styles */
         :root {
@@ -464,6 +466,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+   
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -554,31 +558,31 @@
         <h2 class="section-title">Certifications</h2>
         <div class="certifications-container">
             <div class="certification">
-                <img src="certificates/programming_fundementals.png" alt="Programming Fundamentals Certificate">
+                <img src="{% static 'message/certificates/programming_fundementals.png' %}" alt="Programming Fundamentals Certificate">
                 <h3>Programming Fundamentals using Python - Part 1</h3>
                 <p>Issued by: Great Learning</p>
                 <p>Date: July 2025</p>
             </div>
             <div class="certification">
-                <img src="certificates/Cognify_completion.png" alt="Front-End Development Certificate">
+                <img src="{% static 'message/certificates/Cognify_completion.png' %}" alt="Front-End Development Certificate">
                 <h3>Front-End Development Internship</h3>
                 <p>Issued by: Cognifyz Technologies</p>
                 <p>Date: March 2025</p>
             </div>
             <div class="certification">
-                <img src="certificates/SkillCraft_completion.png" alt="Front-End Development Certificate">
+                <img src="{% static 'message/certificates/SkillCraft_completion.png' %}" alt="Front-End Development Certificate">
                 <h3>Front-End Development Internship</h3>
                 <p>Issued by: SkillCraft</p>
                 <p>Date: June 2025</p>
             </div>
             <div class="certification">
-                <img src="certificates/letter_of_recommendation.png" alt="Letter of Recommendation">
+                <img src="{% static 'message/certificates/letter_of_recommendation.png' %}" alt="Letter of Recommendation">
                 <h3>Letter of Recommendation</h3>
                 <p>Issued by: SkillCraft</p>
                 <p>Date: June 2025</p>
             </div>
                 <div class="certification">
-                <img src="certificates/cultivating_digital_dixterity.png" alt="cultivating digital dexterity">
+                <img src="{% static 'message/certificates/cultivating_digital_dixterity.png' %}" alt="cultivating digital dexterity">
                 <h3>Cultivating Digital Dexterity</h3>
                 <p>Issued by: Great Learning</p>
                 <p>Date: June 2025</p>
@@ -594,7 +598,8 @@
             <div class="projects-container">
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/Tic_Tie_Game.jpeg" alt="Tic-Tac-Toe Game">
+                       
+                        <img src="{% static 'message/images/Tic_Tie_Game.jpeg' %}" alt="Tic-Tac-Toe Game">
                     </div>
                     <div class="project-info">
                         <h3>Tic-Tac-Toe Game</h3>
@@ -607,7 +612,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/rock_paper_scissor .png" alt="Rock-Paper-Scissors Game">
+                        <img src="{% static 'message/images/rock_paper_scissor.png' %}" alt="Rock-Paper-Scissors Game">
                     </div>
                     <div class="project-info">
                         <h3>Rock-Paper-Scissors Game</h3>
@@ -620,7 +625,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/stopWatch.png" alt="StopWatch Application">
+                        <img src="{% static 'message/images/stopwatch.png' %}" alt="StopWatch Application">
                     </div>
                     <div class="project-info">
                         <h3>StopWatch Web Application</h3>
@@ -633,7 +638,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/character_counter.png" alt="Character Counter">
+                        <img src="{% static 'message/images/character_counter.png' %}" alt="Character Counter">
                     </div>
                     <div class="project-info">
                         <h3>Character Count Tool</h3>
@@ -646,7 +651,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/digital_clock.jpeg" alt="Digital Clock">
+                        <img src="{% static 'message/images/digital_clock.jpeg' %}" alt="Digital Clock">
                     </div>
                     <div class="project-info">
                         <h3>Digital Clock</h3>
@@ -659,7 +664,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/img_slider.png" alt="Image Slider">
+                        <img src="{% static 'message/images/img_slider.png' %}" alt="Image Slider">
                     </div>
                     <div class="project-info">
                         <h3>Image Slider</h3>
@@ -672,7 +677,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/quiz_game.png" alt="Quiz Game">
+                        <img src="{% static 'message/images/quiz_game.png' %}" alt="Quiz Game">
                     </div>
                     <div class="project-info">
                         <h3>Quiz Game</h3>
@@ -685,7 +690,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/calender_generator.png" alt="Calendar Generator">
+                        <img src="{% static 'message/images/calendar_generator.png' %}" alt="Calendar Generator">
                     </div>
                     <div class="project-info">
                         <h3>Calendar Generator</h3>
@@ -698,7 +703,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/to_do list.jpeg" alt="To-Do List">
+                        <img src="{% static 'message/images/to_do_list.jpeg' %}" alt="To-Do List">
                     </div>
                     <div class="project-info">
                         <h3>To-Do List Application</h3>
@@ -711,7 +716,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/eye_tracker.png" alt="Eye Tracker">
+                        <img src="{% static 'message/images/eye_tracker.png' %}" alt="Eye Tracker">
                     </div>
                     <div class="project-info">
                         <h3>Eye Tracker</h3>
@@ -724,7 +729,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/number_guessing_game.png" alt="Number Guessing Game">
+                        <img src="{% static 'message/images/number_guessing_game.png' %}" alt="Number Guessing Game">
                     </div>
                     <div class="project-info">
                         <h3>Number Guessing Game</h3>
@@ -737,7 +742,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/light.png" alt="Light-On-Off">
+                        <img src="{% static 'message/images/light.png' %}" alt="Light-On-Off">
                     </div>
                     <div class="project-info">
                         <h3>Light-On-Off </h3>
@@ -750,11 +755,11 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/class_announcement_website.jpeg" alt="Light-On-Off">
+                        <img src="{% static 'message/images/class_announcement_website.jpeg' %}" alt="Class Announcement Website">
                     </div>
                     <div class="project-info">
                         <h3>Class Announcement Website</h3>
-                        <p>A fun game to switch the light on and off.</p>
+                        <p>A platform for teachers to post announcements.</p>
                         <div class="project-links">
                             <a href="https://codingwithpavani.github.io/class-announcements-website/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
                             <a href="https://github.com/codingWithPavani/class-announcements-website" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -763,11 +768,11 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/tap-to-count.png" alt="Tap-to-Count">
+                        <img src="{% static 'message/images/tap-to-count.png' %}" alt="Tap-to-Count">
                     </div>
                     <div class="project-info">
                         <h3>Tap-to-Count</h3>
-                        <p>A fun game to switch the light on and off.</p>
+                        <p>A simple tap counter application.</p>
                         <div class="project-links">
                             <a href="https://codingwithpavani.github.io/tap-to-count/" target=_blank><i class="fas fa-external-link-alt"></i> Live Demo</a>
                             <a href="https://github.com/codingWithPavani/tap-to-count" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -776,7 +781,7 @@
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="images/surprise-for-abi.jpeg" alt="abi-surprise">
+                        <img src="{% static 'message/images/surprise-for-abi.jpeg' %}" alt="abi-surprise">
                     </div>
                     <div class="project-info">
                         <h3>A Surprise for Abi</h3>
@@ -791,28 +796,42 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+<section class="section contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-form">
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </div>
-    </section>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
